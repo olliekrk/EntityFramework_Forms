@@ -44,6 +44,16 @@ namespace EntityFrameworkForms
         private void categoriesGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             selectedCategory = (Category)this.categoriesGridView.Rows[e.RowIndex]?.DataBoundItem;
+
+            //this.productsBindingSource.DataSource = context
+            //    .Products
+            //    .Local
+            //    .ToBindingList()
+            //    .Where(p => p.CategoryId == selectedCategory.CategoryId);
+
+            //this.productsBindingSource.DataSource = (from p in context.Products
+            //                                         where p.CategoryId == selectedCategory.CategoryId
+            //                                         select p);
         }
 
         private void productsGridView_RowLeave(object sender, DataGridViewCellEventArgs e)
@@ -55,7 +65,7 @@ namespace EntityFrameworkForms
                 context.Products.Add(productToAdd);
                 context.SaveChanges();
                 productsGridView.Refresh();
-            }
+            }       
         }
 
         // ORDERS TAB

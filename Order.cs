@@ -8,13 +8,11 @@ namespace EntityFrameworkForms
     {
         public int OrderID { get; set; }
         public int ProductID { get; set; }
-        public virtual Product Product { get; set;}
-
         [ForeignKey("Customer")]
         [Required]
         public String CustomerName { get; set; }
         public virtual Customer Customer { get; set; }
-
+        public virtual Product Product { get; set; }
         public int Quantity { get; set; }
     }
 }

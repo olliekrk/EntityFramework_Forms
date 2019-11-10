@@ -39,9 +39,19 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,20 +63,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Category.cs" />
-    <Compile Include="CategoryForm.cs">
+    <Compile Include="AddCategoryDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoryForm.Designer.cs">
-      <DependentUpon>CategoryForm.cs</DependentUpon>
+    <Compile Include="AddCategoryDialogForm.Designer.cs">
+      <DependentUpon>AddCategoryDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs" />
+    <Compile Include="DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201911031313035_InitialProjectImport.cs" />
     <Compile Include="Migrations\201911031313035_InitialProjectImport.Designer.cs">
       <DependentUpon>201911031313035_InitialProjectImport.cs</DependentUpon>
@@ -75,20 +91,47 @@
     <Compile Include="Migrations\201911031330154_InitialRefactor.Designer.cs">
       <DependentUpon>201911031330154_InitialRefactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911041814494_UnitpriceToMoney.cs" />
+    <Compile Include="Migrations\201911041814494_UnitpriceToMoney.Designer.cs">
+      <DependentUpon>201911041814494_UnitpriceToMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911091827404_RenameCategoryIdField.cs" />
+    <Compile Include="Migrations\201911091827404_RenameCategoryIdField.Designer.cs">
+      <DependentUpon>201911091827404_RenameCategoryIdField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911101313448_AddCustomerPassword.cs" />
+    <Compile Include="Migrations\201911101313448_AddCustomerPassword.Designer.cs">
+      <DependentUpon>201911101313448_AddCustomerPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="ProdContext.cs" />
     <Compile Include="Product.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ShoppingApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CategoryForm.resx">
-      <DependentUpon>CategoryForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddCategoryDialogForm.resx">
+      <DependentUpon>AddCategoryDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911031313035_InitialProjectImport.resx">
       <DependentUpon>201911031313035_InitialProjectImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911031330154_InitialRefactor.resx">
       <DependentUpon>201911031330154_InitialRefactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911041814494_UnitpriceToMoney.resx">
+      <DependentUpon>201911041814494_UnitpriceToMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911091827404_RenameCategoryIdField.resx">
+      <DependentUpon>201911091827404_RenameCategoryIdField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911101313448_AddCustomerPassword.resx">
+      <DependentUpon>201911101313448_AddCustomerPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

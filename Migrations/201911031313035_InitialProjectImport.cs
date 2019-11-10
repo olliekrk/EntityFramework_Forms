@@ -24,12 +24,12 @@ namespace EntityFrameworkForms.Migrations
                         ProductID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         UnitsInStock = c.Decimal(nullable: false, storeType: "money"),
-                        CategoryID = c.Int(nullable: false),
+                        CategoryId = c.Int(nullable: false),
                         Unitprice = c.Decimal(nullable: false, storeType: "money"),
                     })
                 .PrimaryKey(t => t.ProductID)
-                .ForeignKey("dbo.Categories", t => t.CategoryID, cascadeDelete: true)
-                .Index(t => t.CategoryID);
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .Index(t => t.CategoryId);
             
             CreateTable(
                 "dbo.Customers",
@@ -61,10 +61,10 @@ namespace EntityFrameworkForms.Migrations
         {
             DropForeignKey("dbo.Orders", "ProductID", "dbo.Products");
             DropForeignKey("dbo.Orders", "CustomerName", "dbo.Customers");
-            DropForeignKey("dbo.Products", "CategoryID", "dbo.Categories");
+            DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropIndex("dbo.Orders", new[] { "CustomerName" });
             DropIndex("dbo.Orders", new[] { "ProductID" });
-            DropIndex("dbo.Products", new[] { "CategoryID" });
+            DropIndex("dbo.Products", new[] { "CategoryId" });
             DropTable("dbo.Orders");
             DropTable("dbo.Customers");
             DropTable("dbo.Products");
